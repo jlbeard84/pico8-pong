@@ -1,5 +1,5 @@
 # pico8-pong
-Pong demo for the [pico-8](www.pico-8.com) 
+Pong demo for the [pico-8](http://www.pico-8.com) 
 
 ## Credits
 
