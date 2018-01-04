@@ -22,6 +22,36 @@ function movepaddle()
  end
 end
 
+function bounceball()
+ --left
+ if ballx<ballsize then
+  ballxdir=-ballxdir
+  sfx(1)
+ end
+ 
+ --right
+ if ballx>128-ballsize then
+  ballxdir=-ballxdir
+  sfx(1)
+ end
+ 
+ --top
+ if bally<ballsize then
+  ballydir=-ballydir
+  sfx(1)
+ end
+end
+
+function bouncepaddle()
+ if ballx>=padx and
+    ballx<=padx+padw and
+    bally>pady then
+    
+    sfx(0)
+    ballydir=-ballydir
+ end
+end
+
 function moveball()
  ballx+=ballxdir
  bally+=ballydir
@@ -29,6 +59,8 @@ end
 
 function _update()
  movepaddle()
+ bounceball()
+ bouncepaddle()
  moveball()
 end
 
@@ -44,3 +76,6 @@ function _draw()
 end
 
 
+__sfx__
+000400003407000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000100001c05000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
